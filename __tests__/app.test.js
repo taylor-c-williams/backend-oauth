@@ -18,15 +18,16 @@ describe('why-i-autha routes', () => {
     expect(true).toBeTruthy();  
   });
 
-  it.skip('should redirect to the github oauth page upon login', async () => {
+  it('should redirect to the github oauth page upon login', async () => {
     const req = await request(app).get('/api/v1/github/login');
 
     expect(req.header.location).toMatch(
-      /https:\/\/github.com\/login\/oauth\/authorize\?client_id=[\w\d]+&scope=user&redirect_uri=http:\/\/localhost:7890\/api\/v1\/github\/login\/callback/i
+      // /https:\/\/github.com\/login\/oauth\/authorize\?client_id=[\w\d]+&scope=user&redirect_uri=http:\/\/localhost:7890\/api\/v1\/github\/login\/callback/i
+      /https:\/\/github.com\/login\/oauth\/authorize\?client_id=[\w\d]+&redirect_uri=http:\/\/localhost:7890\/api\/v1\/github\/login\/callback&scope=user/i
     );
   });
 
-  it.skip('should login and redirect users to /api/v1/github/dashboard', async () => {
+  it('should login and redirect users to /api/v1/github/dashboard', async () => {
     const req = await request
       .agent(app)
       .get('/api/v1/github/login/callback?code=42')
