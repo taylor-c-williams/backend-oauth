@@ -18,3 +18,9 @@ jobs:
       env:
         CI: true
         DATABASE_URL: postgres://alchemy:alchemy@postgres:5432/alchemy
+        JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        COOKIE_NAME: ${{ secrets.COOKIE_NAME }}
+        SALT_ROUNDS: ${{ secrets.SALT_ROUNDS }}
+        GITHUB_CLIENT_ID: ${{secrets.GITHUB_CLIENT_ID}}
+        GITHUB_CLIENT_SECRET: ${{secrets.GITHUB_CLIENT_SECRET}}
+        GITHUB_REDIRECT_URI: http://localhost:7890/api/v1/github/login/callback
