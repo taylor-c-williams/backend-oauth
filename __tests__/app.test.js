@@ -15,7 +15,7 @@ describe('why-i-autha routes', () => {
   });
 
   it('puts the lotion on its skin', async () => {
-    expect(true).toBeTruthy  
+    expect(true).toBeTruthy();  
   });
 
   it.skip('should redirect to the github oauth page upon login', async () => {
