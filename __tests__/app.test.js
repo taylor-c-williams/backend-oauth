@@ -14,10 +14,6 @@ describe('why-i-autha routes', () => {
     pool.end();
   });
 
-  it('puts the lotion on its skin', async () => {
-    expect(true).toBeTruthy();  
-  });
-
   it('should redirect to the github oauth page upon login', async () => {
     const req = await request(app).get('/api/v1/github/login');
 
